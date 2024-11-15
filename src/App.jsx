@@ -93,7 +93,7 @@ export default function App() {
   const [isLayoutReady, setIsLayoutReady] = useState(false);
 
   useEffect(() => {
-    socketRef.current = io("http://localhost:7000", {
+    socketRef.current = io(import.meta.env.VITE_BASE_URL, {
       query: {
         sync_id: localStorage.getItem("sync_id"),
       },
